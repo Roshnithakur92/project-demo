@@ -1,10 +1,22 @@
 pipeline {
     agent any 
-
+	
+environment {
+        GOOGLE_CREDENTIALS = credentials('gcloud-service-account')
+}
     stages {
 	     stage('Clone Repository') {
             steps {
                 git branch: 'main', url: 'https://github.com/Roshnithakur92/project-demo.git'
+            }
+        }
+             stage('Authenticate with Google Cloud') {
+            steps {
+                script {
+                    // Authenticate with Google Cloud using the service account credentials
+                    sh 'gcloud auth activate-service-account --key-file=${GOOGLE_CREDENTIALS}'
+                    sh 'gcloud config set project halogen-order-447007-t3'
+                }
             }
         }
 		
