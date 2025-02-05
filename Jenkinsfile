@@ -2,7 +2,7 @@ pipeline {
     agent any 
 	
 environment {
-        GOOGLE_CREDENTIALS = credentials('gcloud-service-account')
+        GOOGLE_CREDENTIALS = credentials('account')
 }
     stages {
 	     stage('Clone Repository') {
