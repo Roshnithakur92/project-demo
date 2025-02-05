@@ -16,7 +16,7 @@ pipeline {
         
         stage('Push to Artifact Registry') {
             steps {
-		         sh 'gcloud auth configure-docker \us-central1-docker.pkg.dev
+		         sh 'gcloud auth configure-docker us-central1-docker.pkg.dev'
 			  sh 'docker push "us-central1-docker.pkg.dev/halogen-order-447007-t3/terraform/pthonimage:latest"'
              }
          }
