@@ -14,7 +14,7 @@ environment {
             steps {
                 script {
                     // Authenticate with Google Cloud using the service account credentials
-                    sh 'gcloud auth activate-service-account --key-file=${GOOGLE_CREDENTIALS}
+                    sh 'gcloud auth activate-service-account --key-file=${GOOGLE_CREDENTIALS}'
 	            }
             }
         }
