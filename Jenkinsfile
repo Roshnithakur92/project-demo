@@ -1,10 +1,7 @@
 pipeline {
     agent any 
 	
-environment {
-        GOOGLE_CREDENTIALS = credentials('account')
-}
-    stages {
+	stages {
 	     stage('Clone Repository') {
             steps {
                 git branch: 'main', url: 'https://github.com/Roshnithakur92/project-demo.git'
