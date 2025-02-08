@@ -14,9 +14,11 @@ environment {
             steps {
                 script {
                     // Authenticate with Google Cloud using the service account credentials
+		    withCredentials([file(credentialsId: 'account', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {	
                     sh 'gcloud auth activate-service-account --key-file=${GOOGLE_CREDENTIALS}'
 		    sh 'gcloud auth configure-docker us-central1-docker.pkg.dev'
-	            }
+		    }
+		}
             }
         }
 		
