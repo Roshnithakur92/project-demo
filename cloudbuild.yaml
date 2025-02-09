@@ -3,8 +3,8 @@ Steps:
 - name: 'us-central1-docker.pkg.dev'
 
 args: ['build', '-t',
-'us-central1-docker.pkg.dev/halogen-order-447007-t3/terraform/jenkinsimage:latest', '.']
-- name: 'gcr.io/cloud-builders/docker'
+'us-central1-docker.pkg.dev/halogen-order-447007-t3/terraform/jenkinsimage:latest .']
+- name: 'us-central1-docker.pkg.dev'
 args: ['push', 'us-central1-docker.pkg.dev/halogen-order-447007-t3/terraform/jenkinsimage:latest']
 #For deploying a release in cloud deploy, it will create a pods and services
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
