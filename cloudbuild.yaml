@@ -1,0 +1,19 @@
+Steps:
+# if the docker file is not in the same location then give a full path otherwise use “.”
+- name: 'us-central1-docker.pkg.dev'
+
+args: ['build', '-t',
+'us-central1-docker.pkg.dev/halogen-order-447007-t3/terraform/jenkinsimage:latest', '.']
+- name: 'gcr.io/cloud-builders/docker'
+args: ['push', 'us-central1-docker.pkg.dev/halogen-order-447007-t3/terraform/jenkinsimage:latest']
+#For deploying a release in cloud deploy, it will create a pods and services
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+entrypoint: 'bash'
+args:
+- '-c'
+- >
+gcloud deploy releases create release-$SHORT_SHA
+--delivery-pipeline=muneer-pl
+--region=us-central1
+--source=./
+--images=us-central1-docker.pkg.dev/halogen-order-447007-t3/terraform/jenkinsimage:latest=us-central1-docker.pkg.dev/halogen-order-447007-t3/terraform/jenkinsimage:latest
