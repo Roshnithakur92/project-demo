@@ -1,13 +1,13 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'us-central1-docker.pkg.dev/halogen-order-447007-t3/terraform/pythonimage:latest', '.' ]
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/halogen-order-447007-t3/terraform/jenkinsimage:latest', '.' ]
   id: 'Build Docker Image'
 
   # images:
   # - 'us-central1-docker.pkg.dev/<your_project_id>/gke-repo/quickstart-image'
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us-central1-docker.pkg.dev/halogen-order-447007-t3/terraform/pythonimage:latest' ]
+  args: ['push', 'us-central1-docker.pkg.dev/halogen-order-447007-t3/terraform/jenkinsimage:latest' ]
   id: 'Push Docker Image'
 
   # Step 3: Deploy a release in Cloud Deploy
