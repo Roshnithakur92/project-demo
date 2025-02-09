@@ -13,7 +13,7 @@ args:
 - '-c'
 - >
 gcloud deploy releases create release-$SHORT_SHA
---delivery-pipeline= private-gke-deploy
+--delivery-pipeline=private-gke-deploy
 --region=us-central1
 --source=./
 --images=us-central1-docker.pkg.dev/halogen-order-447007-t3/terraform/jenkinsimage:latest=us-central1-docker.pkg.dev/halogen-order-447007-t3/terraform/jenkinsimage:latest
