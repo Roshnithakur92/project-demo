@@ -6,7 +6,7 @@ steps:
       - 'build'
       - '-t'
       - 'us-central1-docker.pkg.dev/halogen-order-447007-t3/terraform/jenkinsimage:latest'
-      - '.'
+      - './app'
 
   # Step 2: Push Docker Image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
