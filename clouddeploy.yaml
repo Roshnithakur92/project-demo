@@ -1,17 +1,11 @@
 apiVersion: deploy.cloud.google.com/v1
 kind: DeliveryPipeline
 metadata:
-  name: private-gke-deploy
-description: Deploy to Private GKE Cluster
+  name: gke-cicd-pipeline
+  labels:
+    app: cicd
+description: cicd delivery pipeline
 serialPipeline:
   stages:
-    - targetId: private-gke-target
+  - targetId: dev
       profiles: []
----
-apiVersion: deploy.cloud.google.com/v1
-kind: Target
-metadata:
-  name: private-gke-target
-description: "Private GKE Target"
-gke:
-  cluster: projects/halogen-order-447007-t3/locations/asia-south2-a/clusters/my-gke-cluster
