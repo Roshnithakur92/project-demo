@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: jenkins
-          image: us-central1-docker.pkg.dev/halogen-order-447007-t3/terraform/pythonimage:latest
+          image: us-central1-docker.pkg.dev/halogen-order-447007-t3/terraform/jenkinsimage:latest
           ports:
             - containerPort: 80
           resources:
